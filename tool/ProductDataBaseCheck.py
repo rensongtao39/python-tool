@@ -10,6 +10,7 @@ def get_management_console_address(seller_id):
     except ValueError:
         return "输入内容有误请检查"
 
+
     # Step 3: Determine the management console address based on the shard range
     shard_ranges = {
         '00-1f': 'https://ddl.dhgateinternal.com/readonly/slave_query/84/',
@@ -26,6 +27,7 @@ def get_management_console_address(seller_id):
     shard_decimal = int(shard, 16)
 
     for range_key, url in shard_ranges.items():
+
         start_range, end_range = range_key.split('-')
         if int(start_range, 16) <= shard_decimal <= int(end_range, 16):
             print(f"Shard: {shard}, Range: {range_key}, URL: {url}")
