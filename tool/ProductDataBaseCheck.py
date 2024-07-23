@@ -8,7 +8,7 @@ def get_management_console_address(seller_id):
     try:
         int(shard, 16)
     except ValueError:
-        return "输入内容有误请检查"
+        return f"{shard} 输入内容有误请检查"
 
 
     # Step 3: Determine the management console address based on the shard range
@@ -35,7 +35,7 @@ def get_management_console_address(seller_id):
             return f"<a href='{url}'>{url}</a>"
 
     # In case of some unexpected shard value not accounted for
-    return "输入内容有误请检查"
+    return f"{shard} 输入内容有误请检查"
 
 # Example usage
 seller_id_input = "ff8080814999ac040149da3d4608298d"
